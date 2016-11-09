@@ -62,7 +62,7 @@ Height $log(n+1)$
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/min_tree1.gif">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/min_tree2.gif">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/min_tree3.gif">
-<meta property="og:updated_time" content="2016-11-09T19:35:17.903Z">
+<meta property="og:updated_time" content="2016-11-09T19:39:45.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Height of a Complete Binary Tree">
 <meta name="twitter:description" content="The height of a complete binary tree is $O(log n)$
@@ -193,7 +193,7 @@ Height $log(n+1)$
 <h5 id="Basis"><a href="#Basis" class="headerlink" title="Basis"></a>Basis</h5><p>$n$ = 1, $log(n+1)$ = $log2$ = 1, $h$ = $log(n+1)$ = 1</p>
 <h5 id="Inductive-Hypothesis"><a href="#Inductive-Hypothesis" class="headerlink" title="Inductive Hypothesis"></a>Inductive Hypothesis</h5><p>Assume that the theorem is <strong>true</strong> for heights &lt;= $k$ .</p>
 <h5 id="Inductive-Step"><a href="#Inductive-Step" class="headerlink" title="Inductive Step"></a>Inductive Step</h5><p>Prove that the inductive hypothhesis is <strong>true</strong> for height $k + 1$</p>
-<p>Let $h = k + 1$ .<br>Note that the theorem is <strong>true</strong> (by the inductive hypothesis) of the subtrees of the root, since they have height $k$<br>$n = 1 + n$<sub>left</sub> $+$ $n$<sub>right</sub><br>&nbsp;&nbsp;&nbsp;&nbsp;$= 1$ $+$ $2n$<sub>left</sub> ……………………………. <em>since the tree is complete</em><br><strong>BUT</strong>&nbsp;&nbsp; $k = log2(n$<sub>left</sub> $+$ $1)$ ……………………………. <em>by the inductive hypothesis</em><br><strong>SO</strong>&nbsp;&nbsp;&nbsp;&nbsp; $n$<sub>left</sub> $= 2^k - 1$<br><strong>THEN</strong> $n = 1 + 2(2^k - 1)$<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$n = 2^{k + 1} - 1$<br>$log_2(n+1) = log_2(2^{k + 1})$<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ = k + 1$<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ = h$</p>
+<p>Let $h = k + 1$ .<br>Note that the theorem is <strong>true</strong> (by the inductive hypothesis) of the subtrees of the root, since they have height $k$<br>$n = 1 + n$<sub>left</sub> $+$ $n$<sub>right</sub><br>&nbsp;&nbsp;&nbsp;&nbsp;$= 1$ $+$ $2n$<sub>left</sub> ……………………………. <em>since the tree is complete</em><br><strong>BUT</strong>&nbsp;&nbsp; $k = log_2(n$<sub>left</sub> $+$ $1)$ ……………………………. <em>by the inductive hypothesis</em><br><strong>SO</strong>&nbsp;&nbsp;&nbsp;&nbsp; $n$<sub>left</sub> $= 2^k - 1$<br><strong>THEN</strong> $n = 1 + 2(2^k - 1)$<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$n = 2^{k + 1} - 1$<br>$log_2(n+1) = log_2(2^{k + 1})$<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ = k + 1$<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ = h$</p>
 <p>Thus, the inductive hypothesis is <strong>true</strong> for height $k + 1$ and, hence (by induction), <strong>true</strong> for all heights. A ccomplete binary tree of $n$ nodes has height $log_2(n+1)$ .</p>
 
       
