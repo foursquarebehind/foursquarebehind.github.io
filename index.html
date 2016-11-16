@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://foursquarebehind.github.io"></form>
@@ -60,6 +60,149 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Red-Black-Tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/archive/2016/11/16/Red-Black-Tree/" class="article-date">
+  <time datetime="2016-11-16T21:04:28.000Z" itemprop="datePublished">2016-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/archive/2016/11/16/Red-Black-Tree/">Red-Black Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><h5 id="BST-Binary-Search-Tree-Retrieval"><a href="#BST-Binary-Search-Tree-Retrieval" class="headerlink" title="BST(Binary Search Tree) Retrieval"></a>BST(Binary Search Tree) Retrieval</h5><p>Retrieving an element from <strong>BST</strong> requires simple navigation, starting from the root and going left, if the current node is larger than the node we are looking for, or going right otherwise.</p>
+<p><strong>Any of these primitive operations on BST run in $O(h)$ time, where $h$ is the tree height, so the smaller the tree height the better running time operations will achieve. Which means the time complexity of BST Retrieval is related to the height of the BST!</strong></p>
+<p>The problem with <strong>BST</strong> is that, depending on the order of inserting elements in the tree, the tree shape can vary. In the worst cases (such as inserting elements in order) the tree will look like a <strong>linked list</strong> in which each node has only a right child. This yields $O(n)$ for primitive operations on the <strong>BST</strong>, with $n$ the number of nodes in the tree, in the other words, the <strong>BST</strong> is turned to an <strong>ordered linked list</strong>.</p>
+<p>To solve this problem many variations of <strong>BST</strong> exist. Of these variations, <strong>Red-Black tree provides a well-balanced </strong>BST<strong> that guarantees a logarithmic bound on primitive operations</strong>.  </p>
+<hr>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p><strong>Red-Black Tree</strong>, an evolution of <strong>BST</strong> that aim to <strong>keep the tree balanced without affecting the complexity of the primitive operations</strong>. This is done by coloring each node in the tree with either red or black and preserving a set of properties that guarantee that <strong>the deepest path in the tree is not longer than twice the shortest one</strong>.</p>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ol>
+<li>Every node is colored with either red or black;</li>
+<li>All leaf (NULL Pointer) nodes are colored with black;<br> <strong>Note:</strong> <em>If a node’s child is missing then we will assume that it has a nil child(NULL Pointer) in that place and this nil child(NULL Pointer) is always colored black.</em></li>
+<li>Every path from a node $x$ to a descendent leaf has the same number of black nodes (<strong><em>not counting node $x$</em></strong>). We call this number the <strong>black height</strong> of node $x$, which is denoted by $bh(x)$;</li>
+<li>Both children of a red node must be black nodes;<br> <strong>Note:</strong> <em>So it’s impossible to have 2 consecutive reds on a path, so it ensures that the deepest path in the tree is not longer than twice the shortest one. Thus, the <strong>Red-Black Tree</strong> is a relatively balanced binary tree.</em></li>
+<li>The root is always black.</li>
+</ol>
+<img src="/archive/2016/11/16/Red-Black-Tree/rbt_1.jpg" alt="Figure 1 Red-Black Tree" title="Figure 1 Red-Black Tree">
+<hr>
+<h3 id="Application-of-Red-Black-Tree"><a href="#Application-of-Red-Black-Tree" class="headerlink" title="Application of Red-Black Tree"></a>Application of Red-Black Tree</h3><p><strong>Red-Black Tree</strong> is used widely, it is mainly used to store sorted/ordered data, its time complexity is $O(log_2(n))$ which has high efficiency.<br>For example, the Java collection classes <strong>TreeSet</strong> and <strong>TreeMap</strong> , the C++ STL classes <strong>set</strong>, <strong>map</strong>, and Linux virtual memory management, all of these are based on <strong>Red-Black Tree</strong>.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong> Basis </strong></th>
+<th style="text-align:left">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$h$</td>
+<td style="text-align:left">Height of the tree;</td>
+</tr>
+<tr>
+<td style="text-align:left">$h(x)$</td>
+<td style="text-align:left">Height of the node $x$;</td>
+</tr>
+<tr>
+<td style="text-align:left">$bh$</td>
+<td style="text-align:left">Black height of the tree;</td>
+</tr>
+<tr>
+<td style="text-align:left">$bh(x)$</td>
+<td style="text-align:left">Black height of the node $x$;</td>
+</tr>
+<tr>
+<td style="text-align:left">$n$</td>
+<td style="text-align:left">Number of nodes in the tree;</td>
+</tr>
+<tr>
+<td style="text-align:left">$n(x)$</td>
+<td style="text-align:left">Number of the nodes of the node $x$;</td>
+</tr>
+</tbody>
+</table>
+<p>If tree height is $h$, then its $bh &gt;= h/2$; (<strong><em>Why?</em></strong> – <em>According to the 3<sub>rd</sub> property above as each red node strictly requires black children</em>)</p>
+<hr>
+<h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h3><p>A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$, which means the time complexity is $O(log_2(n))$</p>
+<h3 id="Proof-by-induction"><a href="#Proof-by-induction" class="headerlink" title="Proof by induction"></a>Proof by induction</h3><p><strong>Proof:</strong> A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$.<br>The <strong>contrapositive</strong> is “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.<br>So to proof the original <strong>theorem(or the proposition)</strong> is true, we only need to prove whether the <strong>contrapositive</strong> is true, which means just to prove “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.</p>
+<p>Starting from a node $x$ (not including the node) to reach a leaf node of any path, the number of black nodes is <strong>black height</strong> of the node $x$, or $x$’s <strong>black height</strong>, that is $bh(x)$. There are two points as below regarding the $bh(x)$:</p>
+<p><strong>Point 1</strong>: According to the 3<sub>rd</sub> <strong>Red-Black Tree</strong> properties “Every path from a node $x$ to a descendent leaf has the same number of black nodes (<strong><em>not counting node $x$</em></strong>)”, so the $bh(x)$ is unique of the node $x$!<br><strong>Point 2</strong>: According to the 4<sub>th</sub> <strong>Red-Black Tree</strong> properties, “Both children of a red node must be black nodes”, we can say starting from the node x to leaf node, the number of black nodes &gt;= the number the red nodes, which means $bh(x) &gt;= h(x)/2$. Assuming that $x$ is the root node, we can come to the conclusion that $bh &gt;= h/2$. </p>
+<p>Thus, according to the above two points, we conclude that to proof $n &gt;= 2^{h/2} - 1$, we just need to proof $n &gt;= 2^{bh} - 1$, which means the <strong>Red-Black Tree</strong> with height $h$ should contain at least ($2^{bh} - 1$) internal nodes.</p>
+<p>So far, we turned the theorem needs to be proofed<br>“A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$”<br>to<br>“A <strong>Red-Black Tree</strong> with height $h$ contains at least ($2^{bh} - 1$) internal nodes, that is $n &gt;= 2^{bh} - 1$”.</p>
+<hr>
+<p><strong>Base case</strong>: $h(x) = 0$, which means that <strong>x</strong> is a leaft node and therefore $bh(x) = 0$ and the subtree rooted at node <strong>x</strong> has $2^{bh(x)} -1 = 2^0 - 1 = 1 - 1 = 0$ nodes.</p>
+<p><strong>Induction step</strong>:</p>
+<ol>
+<li>$x$ has positive height and 2 children, that is $h(x) &gt; 0, so each of its child has <strong>black height</strong> of $bh(x)$ or ($bh(x) - 1$); </li>
+<li>The height of a child $= h(x) - 1$, so the subtrees rooted at each child contain at least ($2^{bh(x) - 1} -1$) internal nodes;   </li>
+<li>Thus subtree at node $x$ contains $(2^{bh(x) - 1}) + (2^{bh(x) - 1}) + 1 = 2 * 2^{bh(x) - 1} - 1 = 2^{bh(x)} - 1$ nodes, that is $n(x) &gt;= 2^{bh(x)} - 1$.</li>
+<li>So consider $x$ as the root node, then $n &gt;= 2^{bh} - 1$.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong> Thus </strong></th>
+<th style="text-align:left">&nbsp;</th>
+<th style="text-align:left">&nbsp;</th>
+<th style="text-align:left">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$n$</td>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">$2^{bh} - 1$</td>
+<td style="text-align:left">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left">$n$</td>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">$2^{h/2} - 1$</td>
+<td style="text-align:left">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left">$log_2(n + 1)$</td>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">$h/2$</td>
+<td style="text-align:left">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left">$h$</td>
+<td style="text-align:left">&lt;=</td>
+<td style="text-align:left">$2 * log_2(n + 1)$</td>
+<td style="text-align:left">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion</strong>:<br>A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$, which means the time complexity is $O(log_2(n))$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/16/Red-Black-Tree/" data-id="civlf3grr00007clskotv4zxv" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Tree-Properties" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -112,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="civjwhqco0000awwm3vn5u8m4" class="article-share-link">Partager</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="civlf2t1w0008golskqskfp2m" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -267,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/" data-id="civbbcqwh0007jcwmncze0nve" class="article-share-link">Partager</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/" data-id="civlf2t1z0009golsblj1n5sy" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -308,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/" data-id="civbbcqwd0006jcwmn4l89716" class="article-share-link">Partager</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/" data-id="civlf2t1u0006golsj3jg4wdq" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
@@ -397,7 +540,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/24/Multiple-SSH-Keys-settings-for-different-github-account/" data-id="civbbcqw90005jcwm1w1tf7z9" class="article-share-link">Partager</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/24/Multiple-SSH-Keys-settings-for-different-github-account/" data-id="civlf2t1o0004gols5dpr0b1t" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/">Tools</a></li></ul>
@@ -443,7 +586,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/zhi-xi/" data-id="civbbcqw00003jcwmv2lo6rci" class="article-share-link">Partager</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/zhi-xi/" data-id="civlf2t1r0005golsk0djngk7" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
@@ -492,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/How-to-work-with-hexo-and-git-pages/" data-id="civbbcqvx0002jcwmfmxkahv2" class="article-share-link">Partager</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/How-to-work-with-hexo-and-git-pages/" data-id="civlf2t1h0002golsp1lt42ya" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -514,7 +657,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tree/">Tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
@@ -524,16 +667,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/GitHub/" style="font-size: 20px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Tree/" style="font-size: 20px;">Tree</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+      <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Tree/" style="font-size: 20px;">Tree</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
@@ -543,9 +686,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/archive/2016/11/16/Red-Black-Tree/">Red-Black Tree</a>
+          </li>
         
           <li>
             <a href="/archive/2016/11/15/Tree-Properties/">Tree Properties</a>
@@ -563,10 +710,6 @@
             <a href="/archive/2016/10/24/Multiple-SSH-Keys-settings-for-different-github-account/">Multiple SSH Keys settings for different github account</a>
           </li>
         
-          <li>
-            <a href="/archive/2016/10/21/zhi-xi/">窒息</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -580,7 +723,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 bacon<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
