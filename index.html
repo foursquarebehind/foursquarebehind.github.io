@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://foursquarebehind.github.io"></form>
@@ -134,12 +134,12 @@
 </tr>
 </tbody>
 </table>
-<p>If tree height is $h$, then its $bh &gt;= h/2$; (<strong><em>Why?</em></strong> – <em>According to the 4<sub>th</sub> property above as each red node strictly requires black children</em>)</p>
+<p>If tree height is $h$, then its $bh &gt;= h/2$; (<strong><em>Why?</em></strong> – <em>According to the 4<sup>th</sup> property above as each red node strictly requires black children</em>)</p>
 <hr>
 <h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h3><p>A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$, which means the time complexity is $O(log_2(n))$</p>
 <h3 id="Proof-by-induction"><a href="#Proof-by-induction" class="headerlink" title="Proof by induction"></a>Proof by induction</h3><p><strong>Proof:</strong> A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$.<br>The <strong>contrapositive</strong> is “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.<br>So to proof the original <strong>theorem(or the proposition)</strong> is true, we only need to prove whether the <strong>contrapositive</strong> is true, which means just to prove “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.</p>
 <p>Starting from a node $x$ (not including the node) to reach a leaf node of any path, the number of black nodes is <strong>black height</strong> of the node $x$, or $x$’s <strong>black height</strong>, that is $bh(x)$. There are two points as below regarding the $bh(x)$:</p>
-<p><strong>Point 1</strong>: According to the 3<sub>rd</sub> <strong>Red-Black Tree</strong> properties “Every path from a node $x$ to a descendent leaf has the same number of black nodes (<strong><em>not counting node $x$</em></strong>)”, so the $bh(x)$ is unique of the node $x$!<br><strong>Point 2</strong>: According to the 4<sub>th</sub> <strong>Red-Black Tree</strong> properties, “Both children of a red node must be black nodes”, we can say starting from the node x to leaf node, the number of black nodes &gt;= the number the red nodes, which means $bh(x) &gt;= h(x)/2$. Assuming that $x$ is the root node, we can come to the conclusion that $bh &gt;= h/2$. </p>
+<p><strong>Point 1</strong>: According to the 3<sup>rd</sup> <strong>Red-Black Tree</strong> properties “Every path from a node $x$ to a descendent leaf has the same number of black nodes (<strong><em>not counting node $x$</em></strong>)”, so the $bh(x)$ is unique of the node $x$!<br><strong>Point 2</strong>: According to the 4<sup>th</sup> <strong>Red-Black Tree</strong> properties, “Both children of a red node must be black nodes”, we can say starting from the node x to leaf node, the number of black nodes &gt;= the number the red nodes, which means $bh(x) &gt;= h(x)/2$. Assuming that $x$ is the root node, we can come to the conclusion that $bh &gt;= h/2$. </p>
 <p>Thus, according to the above two points, we conclude that to proof $n &gt;= 2^{h/2} - 1$, we just need to proof $n &gt;= 2^{bh} - 1$, which means the <strong>Red-Black Tree</strong> with height $h$ should contain at least ($2^{bh} - 1$) internal nodes.</p>
 <p>So far, we turned the theorem needs to be proofed<br>“A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$”<br>to<br>“A <strong>Red-Black Tree</strong> with height $h$ contains at least ($2^{bh} - 1$) internal nodes, that is $n &gt;= 2^{bh} - 1$”.</p>
 <hr>
@@ -192,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/16/Red-Black-Tree/" data-id="civlf3grr00007clskotv4zxv" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/16/Red-Black-Tree/" data-id="civlf3grr00007clskotv4zxv" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -255,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="civlf2t1w0008golskqskfp2m" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="civlf2t1w0008golskqskfp2m" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -410,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/" data-id="civlf2t1z0009golsblj1n5sy" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/" data-id="civlf2t1z0009golsblj1n5sy" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -451,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/" data-id="civlf2t1u0006golsj3jg4wdq" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/" data-id="civlf2t1u0006golsj3jg4wdq" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
@@ -540,7 +540,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/24/Multiple-SSH-Keys-settings-for-different-github-account/" data-id="civlf2t1o0004gols5dpr0b1t" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/24/Multiple-SSH-Keys-settings-for-different-github-account/" data-id="civlf2t1o0004gols5dpr0b1t" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/">Tools</a></li></ul>
@@ -586,7 +586,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/zhi-xi/" data-id="civlf2t1r0005golsk0djngk7" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/zhi-xi/" data-id="civlf2t1r0005golsk0djngk7" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
@@ -635,7 +635,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/How-to-work-with-hexo-and-git-pages/" data-id="civlf2t1h0002golsp1lt42ya" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/How-to-work-with-hexo-and-git-pages/" data-id="civlf2t1h0002golsp1lt42ya" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -657,7 +657,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tree/">Tree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
     </div>
@@ -667,7 +667,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/Tree/" style="font-size: 20px;">Tree</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     </div>
@@ -686,7 +686,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -723,7 +723,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 bacon<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
