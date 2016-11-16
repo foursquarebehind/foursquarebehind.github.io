@@ -134,7 +134,7 @@
 </tr>
 </tbody>
 </table>
-<p>If tree height is $h$, then its $bh &gt;= h/2$; (<strong><em>Why?</em></strong> – <em>According to the 3<sub>rd</sub> property above as each red node strictly requires black children</em>)</p>
+<p>If tree height is $h$, then its $bh &gt;= h/2$; (<strong><em>Why?</em></strong> – <em>According to the 4<sub>th</sub> property above as each red node strictly requires black children</em>)</p>
 <hr>
 <h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h3><p>A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$, which means the time complexity is $O(log_2(n))$</p>
 <h3 id="Proof-by-induction"><a href="#Proof-by-induction" class="headerlink" title="Proof by induction"></a>Proof by induction</h3><p><strong>Proof:</strong> A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$.<br>The <strong>contrapositive</strong> is “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.<br>So to proof the original <strong>theorem(or the proposition)</strong> is true, we only need to prove whether the <strong>contrapositive</strong> is true, which means just to prove “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.</p>
