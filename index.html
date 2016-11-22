@@ -83,12 +83,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><h5 id="BST-Binary-Search-Tree-Retrieval"><a href="#BST-Binary-Search-Tree-Retrieval" class="headerlink" title="BST(Binary Search Tree) Retrieval"></a>BST(Binary Search Tree) Retrieval</h5><p>Retrieving an element from <strong>BST</strong> requires simple navigation, starting from the root and going left, if the current node is larger than the node we are looking for, or going right otherwise.</p>
+        <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><h5 id="BST-Binary-Search-Tree-Retrieval"><a href="#BST-Binary-Search-Tree-Retrieval" class="headerlink" title="BST(Binary Search Tree) Retrieval"></a>BST(Binary Search Tree) Retrieval</h5><p>Retrieving an element from <strong>BST</strong> requires simple navigation, starting from the root and going left, if the current node is larger than the node we are looking for, or going right otherwise.</p>
 <p><strong>Any of these primitive operations on BST run in $O(h)$ time, where $h$ is the tree height, so the smaller the tree height the better running time operations will achieve. Which means the time complexity of BST Retrieval is related to the height of the BST!</strong></p>
 <p>The problem with <strong>BST</strong> is that, depending on the order of inserting elements in the tree, the tree shape can vary. In the worst cases (such as inserting elements in order) the tree will look like a <strong>linked list</strong> in which each node has only a right child. This yields $O(n)$ for primitive operations on the <strong>BST</strong>, with $n$ the number of nodes in the tree, in the other words, the <strong>BST</strong> is turned to an <strong>ordered linked list</strong>.</p>
 <p>To solve this problem many variations of <strong>BST</strong> exist. Of these variations, <strong>Red-Black tree provides a well-balanced </strong>BST<strong> that guarantees a logarithmic bound on primitive operations</strong>.  </p>
 <hr>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p><strong>Red-Black Tree</strong>, an evolution of <strong>BST</strong> that aim to <strong>keep the tree balanced without affecting the complexity of the primitive operations</strong>. This is done by coloring each node in the tree with either red or black and preserving a set of properties that guarantee that <strong>the deepest path in the tree is not longer than twice the shortest one</strong>.</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><strong>Red-Black Tree</strong>, an evolution of <strong>BST</strong> that aim to <strong>keep the tree balanced without affecting the complexity of the primitive operations</strong>. This is done by coloring each node in the tree with either red or black and preserving a set of properties that guarantee that <strong>the deepest path in the tree is not longer than twice the shortest one</strong>.</p>
 <h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ol>
 <li>Every node is colored with either red or black;</li>
 <li>All leaf (NULL Pointer) nodes are colored with black;<br> <strong>Note:</strong> <em>If a node’s child is missing then we will assume that it has a nil child(NULL Pointer) in that place and this nil child(NULL Pointer) is always colored black.</em></li>
@@ -98,7 +98,7 @@
 </ol>
 <img src="/archive/2016/11/16/Red-Black-Tree/rbt_1.jpg" alt="Figure 1 Red-Black Tree" title="Figure 1 Red-Black Tree">
 <hr>
-<h3 id="Application-of-Red-Black-Tree"><a href="#Application-of-Red-Black-Tree" class="headerlink" title="Application of Red-Black Tree"></a>Application of Red-Black Tree</h3><p><strong>Red-Black Tree</strong> is used widely, it is mainly used to store sorted/ordered data, its time complexity is $O(log_2(n))$ which has high efficiency.<br>For example, the Java collection classes <strong>TreeSet</strong> and <strong>TreeMap</strong> , the C++ STL classes <strong>set</strong>, <strong>map</strong>, and Linux virtual memory management, all of these are based on <strong>Red-Black Tree</strong>.</p>
+<h1 id="Application-of-Red-Black-Tree"><a href="#Application-of-Red-Black-Tree" class="headerlink" title="Application of Red-Black Tree"></a>Application of Red-Black Tree</h1><p><strong>Red-Black Tree</strong> is used widely, it is mainly used to store sorted/ordered data, its time complexity is $O(log_2(n))$ which has high efficiency.<br>For example, the Java collection classes <strong>TreeSet</strong> and <strong>TreeMap</strong> , the C++ STL classes <strong>set</strong>, <strong>map</strong>, and Linux virtual memory management, all of these are based on <strong>Red-Black Tree</strong>.</p>
 <hr>
 <table>
 <thead>
@@ -136,8 +136,8 @@
 </table>
 <p>If tree height is $h$, then its $bh &gt;= h/2$; (<strong><em>Why?</em></strong> – <em>According to the 4<sup>th</sup> property above as each red node strictly requires black children</em>)</p>
 <hr>
-<h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h3><p>A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$, which means the time complexity is $O(log_2(n))$</p>
-<h3 id="Proof-by-induction"><a href="#Proof-by-induction" class="headerlink" title="Proof by induction"></a>Proof by induction</h3><p><strong>Proof:</strong> A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$.<br>The <strong>contrapositive</strong> is “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.<br>So to proof the original <strong>theorem(or the proposition)</strong> is true, we only need to prove whether the <strong>contrapositive</strong> is true, which means just to prove “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.</p>
+<h1 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h1><p>A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$, which means the time complexity is $O(log_2(n))$</p>
+<h1 id="Proof-by-induction"><a href="#Proof-by-induction" class="headerlink" title="Proof by induction"></a>Proof by induction</h1><p><strong>Proof:</strong> A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$.<br>The <strong>contrapositive</strong> is “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.<br>So to proof the original <strong>theorem(or the proposition)</strong> is true, we only need to prove whether the <strong>contrapositive</strong> is true, which means just to prove “the height $h$ of the <strong>Red-Black Tree</strong> has at least $2^{h/2} – 1$ internal nodes”. That is $n &gt;= 2^{h/2} - 1$.</p>
 <p>Starting from a node $x$ (not including the node) to reach a leaf node of any path, the number of black nodes is <strong>black height</strong> of the node $x$, or $x$’s <strong>black height</strong>, that is $bh(x)$. There are two points as below regarding the $bh(x)$:</p>
 <p><strong>Point 1</strong>: According to the 3<sup>rd</sup> <strong>Red-Black Tree</strong> properties “Every path from a node $x$ to a descendent leaf has the same number of black nodes (<strong><em>not counting node $x$</em></strong>)”, so the $bh(x)$ is unique of the node $x$!<br><strong>Point 2</strong>: According to the 4<sup>th</sup> <strong>Red-Black Tree</strong> properties, “Both children of a red node must be black nodes”, we can say starting from the node x to leaf node, the number of black nodes &gt;= the number the red nodes, which means $bh(x) &gt;= h(x)/2$. Assuming that $x$ is the root node, we can come to the conclusion that $bh &gt;= h/2$. </p>
 <p>Thus, according to the above two points, we conclude that to proof $n &gt;= 2^{h/2} - 1$, we just need to proof $n &gt;= 2^{bh} - 1$, which means the <strong>Red-Black Tree</strong> with height $h$ should contain at least ($2^{bh} - 1$) internal nodes.</p>
@@ -188,6 +188,112 @@
 </tbody>
 </table>
 <p><strong>Conclusion</strong>:<br>A <strong>Red-Black Tree</strong> with $n$ internal nodes has height $h&lt;=2 * log_2(n + 1)$, which means the time complexity is $O(log_2(n))$</p>
+<p><strong>Corollary</strong>:<br>All operations of a <strong>Red-Black Tree</strong> take $O(log_2(n))$ time complexity, e.g. Minimum(), Maximum(), Successor(), Predecessor(), Search();<br>Insert() and Delete() will also take $O(log_2(n))$ time complexity, but will need special care since they modify the tree;</p>
+<hr>
+<h1 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h1><p>Every node of <strong>Red-Black Tree</strong> has $5$ attributes:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> t_red_black_node &#123;</div><div class="line">    <span class="keyword">enum</span> &#123; </div><div class="line">        red, black </div><div class="line">    &#125; color;</div><div class="line">    <span class="keyword">void</span> *key;</div><div class="line">    <span class="keyword">struct</span> t_red_black_node *left;</div><div class="line">    <span class="keyword">struct</span> t_red_black_node *right;</div><div class="line">    <span class="keyword">struct</span> t_red_black_node *parent;</div><div class="line">	<span class="keyword">void</span> *value;</div><div class="line">	<span class="keyword">int</span> numLeft;      <span class="comment">//optional</span></div><div class="line">	<span class="keyword">int</span> numRight;     <span class="comment">//optional</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>A <strong>Red-Black Tree</strong> node has 6 mandatory instance variables, which are color，key，left，right，parent and value. For the pointers left, right and parent, these values are assigned to nil when a node is instantiated.<br>Of course we can add more variables like the count of its children nodes according to the requirements.</p>
+<hr>
+<h1 id="Rotations"><a href="#Rotations" class="headerlink" title="Rotations"></a>Rotations</h1><p>How does <strong>inserting</strong> or <strong>deleting</strong> nodes affect a <strong>Red-Black Tree</strong>? To ensure that its color scheme and properties don’t get thrown off, we can recolor or rotate the tree, that is modify the color or the structure of the corresponding nodes, to ensure after the tree modifying operations like <strong>inserting</strong> or <strong>deleting</strong>, the <strong>Red-Black Tree</strong> is continue to keep the its properties and balance.</p>
+<p><strong>Rotation</strong> is a basic operation for changing <strong>Black-Red Tree</strong> structure, it’s a binary operation, between a parent node and one of its children, that swaps nodes and modifies their pointers while preserving the inorder traversal of the tree (so that elements are still sorted).</p>
+<p>There are two types of rotations: <strong>Left Rotation</strong> and <strong>Right Rotation</strong>.<br><strong>Left Rotation</strong> swaps the parent node with its right child,<br><strong>Right Rotation</strong> swaps the parent node with its left child. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Left Rotation</strong></th>
+<th>&nbsp;</th>
+<th style="text-align:center"><strong>Right Rotation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_left_rotation_1.jpg" alt=" Left Rotation" title=" Left Rotation"></td>
+<td>&nbsp;</td>
+<td style="text-align:center"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_right_rotation_1.jpg" alt=" Right Rotation" title=" Right Rotation"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="Left-Rotation"><a href="#Left-Rotation" class="headerlink" title="Left Rotation"></a>Left Rotation</h3><p>Here are the steps involved in for <strong>Left Rotation</strong> (for <strong>Right Rotation</strong> just change “Left” to “Right” below):</p>
+<p>When do the <strong>Left Rotation</strong> on a <strong>pivot</strong>, assume its right child is not <strong>NIL[T]</strong>. <strong>pivot</strong> is a left child of any nodes but not <strong>NIL[T]</strong><br><strong>Left Rotation</strong> is based on the axis between the <strong>pivot</strong> node and <strong>Y</strong> node, the steps are:</p>
+<ol>
+<li>Let node <strong>Y</strong> be the parent of the <strong>pivot</strong> node;</li>
+<li>Let the <strong>pivot</strong> node be the left child of node <strong>Y</strong>;</li>
+<li>Let the left child of node <strong>Y</strong> be the rigth child of the <strong>pivot</strong> node;</li>
+</ol>
+<p>The pesudo code for <strong>Left Rotation</strong> is below(use <strong>X</strong> as the <strong>pivot</strong> node which is mentioned above):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">LEFT-ROTATE(T, X)  		 // T: tree, X: pivot node</div><div class="line"> Y ← right[X]            </div><div class="line"> right[X] ← left[Y]      // Turn Y&apos;s left subtree into X&apos;s right subtree;</div><div class="line"> p[left[Y]] ← X          // Set X as the parent of Y&apos;s left child;</div><div class="line"> p[Y] ← p[X]             // Link X&apos;s parent to Y;</div><div class="line"> if p[X] = nil[T]        // Means X is root, so its parent is nil</div><div class="line"> then root[T] ← Y        // Case 1： first see whether we&apos;re at the root ;</div><div class="line"> else if X = left[p[X]]  </div><div class="line"> then left[p[X]] ← Y     // Case 2： X was on the left of its parent;</div><div class="line"> else right[p[X]] ← Y    // Case 3: X must have been on the right, so set Y as the right child of X&apos;s parent;</div><div class="line"> left[Y] ← X             // Set X as Y&apos;s left child;</div><div class="line"> p[X] ← Y                // Set Y as X&apos;s parent;</div></pre></td></tr></table></figure>
+<p>So as the figure below, <strong>Left Rotation</strong> on node <strong>X</strong> means make node <strong>X</strong>‘s right child as node <strong>X</strong>‘s parent node, that is make node <strong>X</strong> as a left child node (node <strong>X</strong> becomes the left child of node <strong>Z</strong>)!<br>So <strong>Left</strong> means the <strong>Rotated</strong> node will be turned to a left child node.<br><img src="/archive/2016/11/16/Red-Black-Tree/rbt_left_rotation_example_1.png" alt=" Left Rotation" title=" Left Rotation"> </p>
+<hr>
+<h3 id="Right-Rotation"><a href="#Right-Rotation" class="headerlink" title="Right Rotation"></a>Right Rotation</h3><p>The pesudo code for <strong>Right Rotation</strong> is below(use <strong>X</strong> as the <strong>pivot</strong> node which is mentioned above):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">RIGHT-ROTATE(T, X)       // T: tree, X: pivot node</div><div class="line"> Y ← left[X]            </div><div class="line"> left[X] ← right[Y]      // * The differences aginst LEFT-ROTATE</div><div class="line"> p[right[Y]] ← X         // * The differences aginst LEFT-ROTATE</div><div class="line"> p[Y] ← p[X]             </div><div class="line"> if p[X] = nil[T]        </div><div class="line"> then root[T] ← Y        </div><div class="line"> else if X = left[p[X]]  </div><div class="line"> then left[p[X]] ← Y     </div><div class="line"> else right[p[X]] ← Y    </div><div class="line"> right[Y] ← X            // * The differences aginst LEFT-ROTATE </div><div class="line"> p[X] ← Y</div></pre></td></tr></table></figure>
+<p>So as the figure below, <strong>Reft Rotation</strong> on node <strong>X</strong> means make node <strong>X</strong>‘s left child as node <strong>X</strong>‘s parent node, that is make node <strong>X</strong> as a right child node (node <strong>X</strong> becomes the right child of node <strong>Y</strong>)!<br>So <strong>Right</strong> means the <strong>Rotated</strong> node will be turned to a right child node.<br><img src="/archive/2016/11/16/Red-Black-Tree/rbt_right_rotation_example_1.png" alt=" Right Rotation" title=" Right Rotation"> </p>
+<hr>
+<p>So <strong>Left Rotation</strong> and <strong>Right Rotation</strong> are a pair of <strong>invertible</strong> operations.<br><img src="/archive/2016/11/16/Red-Black-Tree/rbt_invertible_rotation.png" alt=" Invertible Operations between Left/Right Rotation" title=" Invertible Operations between Left/Right Rotation"> </p>
+<hr>
+<h1 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h1><h3 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h3><table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>An Example for Insertion</strong></th>
+<th style="text-align:right">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Color this tree</strong></td>
+<td style="text-align:right"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_insertion_1.jpg" alt="Step 1 " title="Step 1 "></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Insert 8</strong><br>Where does it go?<br>What color shoult it be?</td>
+<td style="text-align:right"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_insertion_2.jpg" alt="Step 2 " title="Step 2 "></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Insert 8</strong><br>Color the inserted node as red</td>
+<td style="text-align:right"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_insertion_3.jpg" alt="Step 3 " title="Step 3 "></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Insert 11</strong><br>Where does it go?<br>What color shoult it be?<br>Can’t be red!(break property #4)<br>Can’t be black!(break property #3)</td>
+<td style="text-align:right"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_insertion_4.jpg" alt="Step 4 " title="Step 4 "></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Insert 11</strong><br>Where does it go?<br>Solution: recolor the tree</td>
+<td style="text-align:right"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_insertion_5.jpg" alt="Step 5 " title="Step 5 "></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Insert 10</strong><br>Where does it go?<br>What color shoult it be?<br></td>
+<td style="text-align:right"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_insertion_6.jpg" alt="Step 6 " title="Step 6 "></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Answer</strong>: no color! Tree is too imbalanced!<br>Must change tree structure to allow recoloring<br><strong>Goal</strong>: Restructure tree in $O(log_2(n))$ time</td>
+<td style="text-align:right"><img src="/archive/2016/11/16/Red-Black-Tree/rbt_insertion_6.jpg" alt="Step 6 " title="Step 6 "></td>
+</tr>
+</tbody>
+</table>
+<p>Based on the above example, the <strong>Red-Black Tree Insertion operation</strong> is to do a regular BST insertion, then do the operations (recolor or rotate) to make the new tree satisfy with all of the <strong>Red-Black Tree</strong> properties.<br>A special case is required for an empty tree. If the tree is empty, replace it with a single black node containing the inserted value. This ensures that the root property is satisfied.</p>
+<p>So assume we are trying to insert one new node <strong>X</strong> to <strong>T</strong> (a nonempty <strong>Red-Black Tree</strong>)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Insertion steps</strong>:</th>
+<th style="text-align:left">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Step 1</strong>:</td>
+<td style="text-align:left">Use the BST insert algorithm to insert <strong>X</strong> to <strong>T</strong> (<strong><em>Note: every insertion take places at a leaf)</em></strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Step 2</strong>:</td>
+<td style="text-align:left">Color the node <strong>X</strong> red</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Step 3</strong>:</td>
+<td style="text-align:left">Restore <strong>Red-Black Tree</strong> properties by <strong>recolor</strong> or <strong>rotate</strong> operations (if necessary)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://www.cs.virginia.edu/~luebke/cs332.fall00/lecture10/index.htm" target="_blank" rel="external">http://www.cs.virginia.edu/~luebke/cs332.fall00/lecture10/index.htm</a></p>
 
       
     </div>
@@ -620,13 +726,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###安装Hexo###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd d:/hexo</div><div class="line">npm install hexo-cli -g</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div><div class="line">hexo g # 或者hexo generate</div><div class="line">hexo s # 或者hexo server，可以在http://localhost:4000/ 查看</div></pre></td></tr></table></figure></p>
+        <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd d:/hexo</div><div class="line">npm install hexo-cli -g</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div><div class="line">hexo g # 或者hexo generate</div><div class="line">hexo s # 或者hexo server，可以在http://localhost:4000/ 查看</div></pre></td></tr></table></figure>
 <p>这里有必要提下Hexo常用的几个命令：<br>hexo generate (hexo g) 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹<br>hexo server (hexo s) 启动本地web服务，用于博客的预览<br>hexo deploy (hexo d) 部署播客到远端（比如github, heroku等平台）<br>另外还有其他几个常用命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo new page &quot;pageName&quot; #新建页面</div></pre></td></tr></table></figure>
-<p>###常用简写###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure></p>
-<p>###常用组合###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo d -g #生成部署</div><div class="line">hexo s -g #生成预览</div></pre></td></tr></table></figure></p>
-<p>###使用git命令行部署###</p>
-<p>clone github repo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd d:/hexo/blog</div><div class="line">git clone https://github.com/foursquarebehind/foursquarebehind.github.io.git .deploy/foursquarebehind.github.io</div></pre></td></tr></table></figure></p>
+<h3 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo new</div><div class="line">hexo g == hexo generate</div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div></pre></td></tr></table></figure>
+<h3 id="常用组合"><a href="#常用组合" class="headerlink" title="常用组合"></a>常用组合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo d -g #生成部署</div><div class="line">hexo s -g #生成预览</div></pre></td></tr></table></figure>
+<h3 id="使用git命令行部署"><a href="#使用git命令行部署" class="headerlink" title="使用git命令行部署"></a>使用git命令行部署</h3><p>clone github repo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd d:/hexo/blog</div><div class="line">git clone https://github.com/foursquarebehind/foursquarebehind.github.io.git .deploy/foursquarebehind.github.io</div></pre></td></tr></table></figure></p>
 <p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码。<br>创建一个deploy脚本文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">cp -R public/* .deploy/foursquarebehind.github.io</div><div class="line">cd .deploy/foursquarebehind.github.io</div><div class="line">git add .</div><div class="line">git commit -m “update”</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
 <p>简单解释一下，hexo generate生成public文件夹下的新内容，然后将其拷贝至foursquarebehind.github.io的git目录下，然后使用git commit命令提交代码到foursquarebehind.github.io这个repo的master branch上。<br>需要部署的时候，执行这段脚本就可以了（比如可以将其保存为deploy.sh）。执行过程中可能需要让你输入Github账户的用户名及密码，按照提示操作即可。</p>
