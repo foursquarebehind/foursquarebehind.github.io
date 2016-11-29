@@ -73,7 +73,7 @@ Insert 11Where does it go?What color s">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_6.png">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_7.png">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_8.png">
-<meta property="og:updated_time" content="2016-11-29T20:12:45.004Z">
+<meta property="og:updated_time" content="2016-11-29T21:07:32.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Red-Black Tree Insertion">
 <meta name="twitter:description" content="Insertion
@@ -533,35 +533,35 @@ Insert 11Where does it go?What color s">
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">The original <strong>Red-Black Tree</strong></td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_1.png" alt="Step 1 " title="Step 1 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Insert node <strong>32</strong> into the tree.<br>This is no longer a <strong>Red-Black Tree</strong><br>because there are two successive <strong>RED</strong> nodes<br>on the path 57-29-43-37-32.<br>Mark the new node <strong>32</strong> as <strong>x</strong>, and it’s <strong>uncle</strong> as <strong>y</strong><br><strong>y</strong> is <strong>RED</strong>, so we have <strong>case 1</strong></td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_2.png" alt="Step 2 " title="Step 2 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Recolor the nodes <strong>37, 43, 51</strong></td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_3.png" alt="Step 3 " title="Step 3 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Move <strong>x</strong> up to its <strong>grampa (43)</strong>.<br><strong>x</strong>‘s <strong>parent 29</strong> is still <strong>RED</strong>,<br>so this isn’t a <strong>Red-Black Tree</strong> yet.<br> Mark the uncle <strong>y</strong>.<br>In this case, the <strong>uncle</strong> is <strong>BLACK</strong>,<br>so we have the <strong>case 2</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_4.png" alt="Step 4 " title="Step 4 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Move <strong>x</strong> up again and do <strong>LEFT-ROTATE</strong> on <strong>x</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_5.png" alt="Step 5 " title="Step 5 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Still not a <strong>Red-Black Tree</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_6.png" alt="Step 6 " title="Step 6 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Recolor nodes <strong>43</strong> and <strong>57</strong>,<br><strong>RIGHT-ROTATE</strong> on <strong>57</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_7.png" alt="Step 7 " title="Step 7 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">This is now a <strong>Red-Black Tree</strong>!<br>$O(log_n)$ time!</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_8.png" alt="Step 8 " title="Step 8 "></td>
 </tr>
 </tbody>
@@ -570,7 +570,7 @@ Insert 11Where does it go?What color s">
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/" data-id="ciw3xxszg000chkwm1xw9rlsx" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/" data-id="ciw3zw0h8000ceswmtzzbm06z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -580,6 +580,15 @@ Insert 11Where does it go?What color s">
   
     
 <nav id="article-nav">
+  
+    <a href="/archive/2016/11/29/Red-Black-Tree-Deletion/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Red-Black Tree Deletion
+        
+      </div>
+    </a>
   
   
     <a href="/archive/2016/11/16/Red-Black-Tree/" id="article-nav-older" class="article-nav-link-wrap">
@@ -635,6 +644,10 @@ Insert 11Where does it go?What color s">
       <ul>
         
           <li>
+            <a href="/archive/2016/11/29/Red-Black-Tree-Deletion/">Red-Black Tree Deletion</a>
+          </li>
+        
+          <li>
             <a href="/archive/2016/11/29/Red-Black-Tree-Insertion/">Red-Black Tree Insertion</a>
           </li>
         
@@ -648,10 +661,6 @@ Insert 11Where does it go?What color s">
         
           <li>
             <a href="/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/">Height of a Complete Binary Tree</a>
-          </li>
-        
-          <li>
-            <a href="/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/">Most Beautiful Mathematical Equations</a>
           </li>
         
       </ul>

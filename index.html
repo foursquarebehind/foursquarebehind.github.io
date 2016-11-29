@@ -61,6 +61,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Red-Black-Tree-Deletion" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/archive/2016/11/29/Red-Black-Tree-Deletion/" class="article-date">
+  <time datetime="2016-11-29T20:29:09.000Z" itemprop="datePublished">2016-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/archive/2016/11/29/Red-Black-Tree-Deletion/">Red-Black Tree Deletion</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/" data-id="ciw3zw0ha000eeswm5lhflike" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Red-Black-Tree-Insertion" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/archive/2016/11/29/Red-Black-Tree-Insertion/" class="article-date">
@@ -447,35 +485,35 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">The original <strong>Red-Black Tree</strong></td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_1.png" alt="Step 1 " title="Step 1 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Insert node <strong>32</strong> into the tree.<br>This is no longer a <strong>Red-Black Tree</strong><br>because there are two successive <strong>RED</strong> nodes<br>on the path 57-29-43-37-32.<br>Mark the new node <strong>32</strong> as <strong>x</strong>, and it’s <strong>uncle</strong> as <strong>y</strong><br><strong>y</strong> is <strong>RED</strong>, so we have <strong>case 1</strong></td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_2.png" alt="Step 2 " title="Step 2 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Recolor the nodes <strong>37, 43, 51</strong></td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_3.png" alt="Step 3 " title="Step 3 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Move <strong>x</strong> up to its <strong>grampa (43)</strong>.<br><strong>x</strong>‘s <strong>parent 29</strong> is still <strong>RED</strong>,<br>so this isn’t a <strong>Red-Black Tree</strong> yet.<br> Mark the uncle <strong>y</strong>.<br>In this case, the <strong>uncle</strong> is <strong>BLACK</strong>,<br>so we have the <strong>case 2</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_4.png" alt="Step 4 " title="Step 4 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Move <strong>x</strong> up again and do <strong>LEFT-ROTATE</strong> on <strong>x</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_5.png" alt="Step 5 " title="Step 5 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Still not a <strong>Red-Black Tree</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_6.png" alt="Step 6 " title="Step 6 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">Recolor nodes <strong>43</strong> and <strong>57</strong>,<br><strong>RIGHT-ROTATE</strong> on <strong>57</strong>.</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_7.png" alt="Step 7 " title="Step 7 "></td>
 </tr>
 <tr>
-<td style="text-align:left">&amp;nbsp</td>
+<td style="text-align:left">This is now a <strong>Red-Black Tree</strong>!<br>$O(log_n)$ time!</td>
 <td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_8.png" alt="Step 8 " title="Step 8 "></td>
 </tr>
 </tbody>
@@ -484,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/" data-id="ciw3xxszg000chkwm1xw9rlsx" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/" data-id="ciw3zw0h8000ceswmtzzbm06z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -667,12 +705,12 @@
 <hr>
 <p>So <strong>Left Rotation</strong> and <strong>Right Rotation</strong> are a pair of <strong>invertible</strong> operations.<br><img src="/archive/2016/11/16/Red-Black-Tree/rbt_invertible_rotation.png" alt=" Invertible Operations between Left/Right Rotation" title=" Invertible Operations between Left/Right Rotation"> </p>
 <hr>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://www.cs.virginia.edu/~luebke/cs332.fall00/lecture10/index.htm" target="_blank" rel="external">http://www.cs.virginia.edu/~luebke/cs332.fall00/lecture10/index.htm</a><br><a href="http://pages.cs.wisc.edu/~paton/readings/Red-Black-Trees/" target="_blank" rel="external">http://pages.cs.wisc.edu/~paton/readings/Red-Black-Trees/</a><br><a href="https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html" target="_blank" rel="external">https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html</a><br><a href="https://www.cs.auckland.ac.nz/software/AlgAnim/red_black_op.html" target="_blank" rel="external">https://www.cs.auckland.ac.nz/software/AlgAnim/red_black_op.html</a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="http://www.cs.virginia.edu/~luebke/cs332.fall00/lecture10/index.htm" target="_blank" rel="external">http://www.cs.virginia.edu/~luebke/cs332.fall00/lecture10/index.htm</a><br><a href="http://pages.cs.wisc.edu/~paton/readings/Red-Black-Trees/" target="_blank" rel="external">http://pages.cs.wisc.edu/~paton/readings/Red-Black-Trees/</a><br><a href="https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html" target="_blank" rel="external">https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html</a><br><a href="https://www.cs.auckland.ac.nz/software/AlgAnim/red_black_op.html" target="_blank" rel="external">https://www.cs.auckland.ac.nz/software/AlgAnim/red_black_op.html</a><br><a href="https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.01.md" target="_blank" rel="external">https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.01.md</a><br><a href="https://www.cs.duke.edu/~reif/courses/alglectures/skiena.lectures/lecture10.pdf" target="_blank" rel="external">https://www.cs.duke.edu/~reif/courses/alglectures/skiena.lectures/lecture10.pdf</a><br><a href="http://www.cnblogs.com/skywang12345/p/3245399.html" target="_blank" rel="external">http://www.cnblogs.com/skywang12345/p/3245399.html</a><br><a href="http://blog.csdn.net/luoshixian099/article/details/45786665" target="_blank" rel="external">http://blog.csdn.net/luoshixian099/article/details/45786665</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/16/Red-Black-Tree/" data-id="ciw3xxsze000ahkwmf6hjhhwr" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/16/Red-Black-Tree/" data-id="ciw3zw0h1000aeswmr0pyekyv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -735,7 +773,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="ciw3xxszc0009hkwmyhx80ao1" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="ciw3zw0gz0009eswmelu8vc1w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -890,7 +928,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/" data-id="ciw3xxsz50007hkwmkxsgad0e" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/" data-id="ciw3zw0gp0006eswmurs9c7iz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -931,7 +969,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/" data-id="ciw3xxsz20006hkwmic60d9ep" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/" data-id="ciw3zw0gs0007eswmcowtcqn1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
@@ -1020,7 +1058,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/24/Multiple-SSH-Keys-settings-for-different-github-account/" data-id="ciw3xxsz00005hkwmmo532ypg" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/24/Multiple-SSH-Keys-settings-for-different-github-account/" data-id="ciw3zw0gm0005eswmpu24flab" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/">Tools</a></li></ul>
@@ -1066,7 +1104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/zhi-xi/" data-id="ciw3xxsyr0003hkwmkgwrdn87" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/zhi-xi/" data-id="ciw3zw0gd0003eswmle35ccgd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
@@ -1114,7 +1152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/How-to-work-with-hexo-and-git-pages/" data-id="ciw3xxsym0002hkwml3mhijza" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/10/21/How-to-work-with-hexo-and-git-pages/" data-id="ciw3zw0g80002eswmich90rvl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -1170,6 +1208,10 @@
       <ul>
         
           <li>
+            <a href="/archive/2016/11/29/Red-Black-Tree-Deletion/">Red-Black Tree Deletion</a>
+          </li>
+        
+          <li>
             <a href="/archive/2016/11/29/Red-Black-Tree-Insertion/">Red-Black Tree Insertion</a>
           </li>
         
@@ -1183,10 +1225,6 @@
         
           <li>
             <a href="/archive/2016/11/09/Height-of-a-Complete-Binary-Tree/">Height of a Complete Binary Tree</a>
-          </li>
-        
-          <li>
-            <a href="/archive/2016/11/08/Most-Beautiful-Mathematical-Equations/">Most Beautiful Mathematical Equations</a>
           </li>
         
       </ul>
