@@ -5,54 +5,16 @@
   
   <title>Red-Black Tree Insertion | Four-Square behind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Insertion
-
-
-An Example for Insertion
-&amp;nbsp;
-
-
-
-
-Color this tree
-
-
-
-Insert 8Where does it go?What color shoult it be?
-
-
-
-Insert 8Color the inserted node as RED
-
-
-
-Insert 11Where does it go?What color s">
+  <meta name="description" content="Red-Black Tree Properties
+Every node is colored with either RED or BLACK;
+All leaf (NULL Pointer) nodes are colored with BLACK; Note: If a node’s child is missing then we will assume that it has a ni">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Red-Black Tree Insertion">
 <meta property="og:url" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/index.html">
 <meta property="og:site_name" content="Four-Square behind">
-<meta property="og:description" content="Insertion
-
-
-An Example for Insertion
-&amp;nbsp;
-
-
-
-
-Color this tree
-
-
-
-Insert 8Where does it go?What color shoult it be?
-
-
-
-Insert 8Color the inserted node as RED
-
-
-
-Insert 11Where does it go?What color s">
+<meta property="og:description" content="Red-Black Tree Properties
+Every node is colored with either RED or BLACK;
+All leaf (NULL Pointer) nodes are colored with BLACK; Note: If a node’s child is missing then we will assume that it has a ni">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_1.jpg">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_2.jpg">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_3.jpg">
@@ -73,31 +35,12 @@ Insert 11Where does it go?What color s">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_6.png">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_7.png">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_complete_8.png">
-<meta property="og:updated_time" content="2016-11-29T21:07:32.989Z">
+<meta property="og:updated_time" content="2017-01-18T20:23:11.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Red-Black Tree Insertion">
-<meta name="twitter:description" content="Insertion
-
-
-An Example for Insertion
-&amp;nbsp;
-
-
-
-
-Color this tree
-
-
-
-Insert 8Where does it go?What color shoult it be?
-
-
-
-Insert 8Color the inserted node as RED
-
-
-
-Insert 11Where does it go?What color s">
+<meta name="twitter:description" content="Red-Black Tree Properties
+Every node is colored with either RED or BLACK;
+All leaf (NULL Pointer) nodes are colored with BLACK; Note: If a node’s child is missing then we will assume that it has a ni">
 <meta name="twitter:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/rbt_insertion_1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Four-Square behind" type="application/atom+xml">
@@ -169,7 +112,15 @@ Insert 11Where does it go?What color s">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h1><table>
+        <p><a name="Properties"></a></p>
+<h1 id="Red-Black-Tree-Properties"><a href="#Red-Black-Tree-Properties" class="headerlink" title="Red-Black Tree Properties"></a>Red-Black Tree Properties</h1><ol>
+<li>Every node is colored with either <strong>RED</strong> or <strong>BLACK</strong>;</li>
+<li>All leaf (NULL Pointer) nodes are colored with <strong>BLACK</strong>;<br> <strong>Note:</strong> <em>If a node’s child is missing then we will assume that it has a nil child(NULL Pointer) in that place and this nil child(NULL Pointer) is always colored <strong>BLACK</strong>.</em></li>
+<li>Every path from a node $x$ to a descendent leaf has the same number of <strong>BLACK</strong> nodes (<strong><em>not counting node $x$</em></strong>). We call this number the <strong>Black-Height</strong> of node $x$, which is denoted by $bh(x)$;</li>
+<li>Both children of a <strong>RED</strong> node must be <strong>BLACK</strong> nodes;<br> <strong>Note:</strong> <em>So it’s impossible to have 2 consecutive reds on a path, so it ensures that the deepest path in the tree is not longer than twice the shortest one. Thus, the <strong>Red-Black Tree</strong> is a relatively balanced binary tree.</em></li>
+<li>The root is always <strong>BLACK</strong>;</li>
+</ol>
+<h1 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h1><table>
 <thead>
 <tr>
 <th style="text-align:left"><strong>An Example for Insertion</strong></th>
@@ -570,7 +521,7 @@ Insert 11Where does it go?What color s">
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/" data-id="ciw3zw0h8000ceswmtzzbm06z" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Insertion/" data-id="ciy3d4xe5000amcls0r694isn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -675,7 +626,7 @@ Insert 11Where does it go?What color s">
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 bacon<br>
+      &copy; 2017 bacon<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

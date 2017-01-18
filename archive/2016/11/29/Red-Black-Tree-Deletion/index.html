@@ -5,16 +5,27 @@
   
   <title>Red-Black Tree Deletion | Four-Square behind</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Insertion">
+  <meta name="description" content="Red-Black Tree Properties
+Every node is colored with either RED or BLACK;
+All leaf (NULL Pointer) nodes are colored with BLACK; Note: If a node’s child is missing then we will assume that it has a ni">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Red-Black Tree Deletion">
 <meta property="og:url" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/index.html">
 <meta property="og:site_name" content="Four-Square behind">
-<meta property="og:description" content="Insertion">
-<meta property="og:updated_time" content="2016-11-29T21:07:32.988Z">
+<meta property="og:description" content="Red-Black Tree Properties
+Every node is colored with either RED or BLACK;
+All leaf (NULL Pointer) nodes are colored with BLACK; Note: If a node’s child is missing then we will assume that it has a ni">
+<meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_1.png">
+<meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_2.png">
+<meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_3.png">
+<meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_4.png">
+<meta property="og:updated_time" content="2017-01-18T20:23:11.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Red-Black Tree Deletion">
-<meta name="twitter:description" content="Insertion">
+<meta name="twitter:description" content="Red-Black Tree Properties
+Every node is colored with either RED or BLACK;
+All leaf (NULL Pointer) nodes are colored with BLACK; Note: If a node’s child is missing then we will assume that it has a ni">
+<meta name="twitter:image" content="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_1.png">
   
     <link rel="alternate" href="/atom.xml" title="Four-Square behind" type="application/atom+xml">
   
@@ -85,11 +96,172 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h1>
+        <p><a name="Properties"></a></p>
+<h1 id="Red-Black-Tree-Properties"><a href="#Red-Black-Tree-Properties" class="headerlink" title="Red-Black Tree Properties"></a>Red-Black Tree Properties</h1><ol>
+<li>Every node is colored with either <strong>RED</strong> or <strong>BLACK</strong>;</li>
+<li>All leaf (NULL Pointer) nodes are colored with <strong>BLACK</strong>;<br> <strong>Note:</strong> <em>If a node’s child is missing then we will assume that it has a nil child(NULL Pointer) in that place and this nil child(NULL Pointer) is always colored <strong>BLACK</strong>.</em></li>
+<li>Every path from a node $x$ to a descendent leaf has the same number of <strong>BLACK</strong> nodes (<strong><em>not counting node $x$</em></strong>). We call this number the <strong>Black-Height</strong> of node $x$, which is denoted by $bh(x)$;</li>
+<li>Both children of a <strong>RED</strong> node must be <strong>BLACK</strong> nodes;<br> <strong>Note:</strong> <em>So it’s impossible to have 2 consecutive reds on a path, so it ensures that the deepest path in the tree is not longer than twice the shortest one. Thus, the <strong>Red-Black Tree</strong> is a relatively balanced binary tree.</em></li>
+<li>The root is always <strong>BLACK</strong>;</li>
+</ol>
+<h1 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a>Deletion</h1><p>The delete operation is similar in feel to the insert operation, but more complicated.</p>
+<p>To delete a node from a <strong>Red-Black Tree</strong>, first do a <strong>BST</strong> <strong>Deletion</strong> to delete the node from the <strong>Red-Black Tree</strong>, then via <strong>Rotation</strong> and <strong>Recolor</strong> operations to restore the tree to meet all of the <strong>Red-Black Tree</strong> properties again.</p>
+<h1 id="Detail-steps"><a href="#Detail-steps" class="headerlink" title="Detail steps"></a>Detail steps</h1><table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Step 1</strong></th>
+<th style="text-align:left"><strong>Delete the node via BST Deletion</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Case 1</strong></td>
+<td style="text-align:left">The deleting node is a leaf node, then just delete it.  <strong>Black-Height change is possible!!!</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Case 2</strong></td>
+<td style="text-align:left">The deleting node has 1 subtree, then just “link past” the node. <strong>Black-Height change is possible!!!</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">i.e. connect the parent of the node directly to the node’s only subtree.</td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">This always works, whether the one subtree is on the left or on the right.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Case 3</strong></td>
+<td style="text-align:left">The deleting node has 2 subtree, then follow the below 3 steps:</td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">&nbsp;&nbsp; <strong>3.1</strong> First find the successor of this node.</td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">&nbsp;&nbsp; <strong>3.2</strong> Then copy the value of the successor to this node.</td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">&nbsp;&nbsp; The idea is move the value from the successor to the deleting node, then delete the successor.</td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">&nbsp;&nbsp; Now considering the successor, <strong>it’s impossible that the successor has two non-empty child nodes!</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">&nbsp;&nbsp; so either the successor is a leaf node so process as the <strong>Case 1</strong>;</td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">&nbsp;&nbsp; or the successor only has 1 child node so process as the <strong>Case 2</strong>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Deletion Cases</strong></th>
+<th style="text-align:left">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">The deleting node is a <strong>RED</strong> leaf, then just delete it.</td>
+<td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_1.png" alt="Figure 1 Red-Black Tree Delete RED leaf" title="Figure 1 Red-Black Tree Delete RED leaf"></td>
+</tr>
+<tr>
+<td style="text-align:left">The deleting node is a <strong>BLACK</strong> leaf, <strong>Black-Height</strong> changed!!!<br>We need the step 2.</td>
+<td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_2.png" alt="Figure 2 Red-Black Tree Delete BLACK leaf" title="Figure 2 Red-Black Tree Delete BLACK leaf"></td>
+</tr>
+<tr>
+<td style="text-align:left">The deleting node is a <strong>BLACK</strong> node with 1 <strong>RED</strong> child,<br>link past the node, then recolor the <strong>RED</strong> child to <strong>BLACK</strong> to keep the <strong>Black-Height</strong>.</td>
+<td style="text-align:left"><img src="/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_3.png" alt="Figure 3 Red-Black Tree Delete RED non-empty node" title="Figure 3 Red-Black Tree Delete RED non-empty node"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The deleting node is a node with 2 child nodes,it will be a little complexity.</strong> </p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong><em>Properties again</em></strong></th>
+<th style="text-align:center">&nbsp;</th>
+<th style="text-align:left">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><em>Question</em></strong>:</td>
+<td style="text-align:center">&nbsp;</td>
+<td style="text-align:left">Which <strong>Red-Black Tree</strong> <a href="#Properties">properties</a> does the above case break?</td>
+</tr>
+<tr>
+<td style="text-align:left">1. Every node is colored with either <strong>RED</strong> or <strong>BLACK</strong></td>
+<td style="text-align:center">&nbsp;</td>
+<td style="text-align:left">We don’t break this because the new inserted node is colored as <strong>RED</strong>;</td>
+</tr>
+<tr>
+<td style="text-align:left">2. All leaf (NULL Pointer) nodes are colored with <strong>BLACK</strong></td>
+<td style="text-align:center">&nbsp;</td>
+<td style="text-align:left">We don’t break this because the new inserted node is a nonempty node, it won’t impact the leaf nodes which are all nil(NULL Pointer) nodes;</td>
+</tr>
+<tr>
+<td style="text-align:left">3. Every path from a node $x$ to a descendent leaf has the same number of <strong>BLACK</strong> nodes</td>
+<td style="text-align:center">&nbsp;</td>
+<td style="text-align:left">We don’t break this because the new inserted node is colored as <strong>RED</strong>, so the count of <strong>BLACK</strong> nodes should keep same as before;</td>
+</tr>
+<tr>
+<td style="text-align:left">4. Both children of a <strong>RED</strong> node must be <strong>BLACK</strong> nodes</td>
+<td style="text-align:center">&nbsp;</td>
+<td style="text-align:left"><strong>We might break property #4!!!</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">5. The root is always <strong>BLACK</strong></td>
+<td style="text-align:center">&nbsp;</td>
+<td style="text-align:left">We don’t break this because BST insertion will only insert the new node to the leaf nodes, the root node won’t be impacted;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>After step 1, delete one node via BST deletion, the new tree might break Red-Black Tree <a href="#Properties">properties</a> 3,4,5, it’s what we want to resolve at step 2.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Step 2</strong></th>
+<th style="text-align:left"><strong>Rotation or Recolor to restore the tree to meet all of the Red-Black Tree <a href="#Properties">properties</a> again.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left">Because after step 1, the new tree might not meet all of the <strong>Red-Black Tree</strong> <a href="#Properties">properties</a>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Pseudo code — RB-DELETE</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">RB-DELETE(T, z)</div><div class="line">if left[z] = nil[T] or right[z] = nil[T]         </div><div class="line">   then y ← z                                  // if &quot;z&quot; has unique child, then assign &quot;z&quot; to &quot;y&quot;</div><div class="line">   else y ← TREE-SUCCESSOR(z)                  // otherwise assign &quot;z&quot;&apos;s successor to &quot;y&quot; </div><div class="line"></div><div class="line">if left[y] ≠ nil[T]</div><div class="line">   then x ← left[y]                            // if &quot;y&quot;&apos;s left child is not NIL, then assign it to &quot;x&quot;</div><div class="line">   else x ← right[y]                           // otherwise assign &quot;y&quot;&apos;s right child to &quot;x&quot; (because &quot;y&quot; is from &quot;z&quot;, it must have at least one child)</div><div class="line"></div><div class="line">p[x] ← p[y]                                    // assign &quot;y&quot;&apos;s parent to &quot;x&quot;&apos;s parent</div><div class="line">if p[y] = nil[T]                               </div><div class="line">   then root[T] ← x                            // Case 1: if &quot;y&quot;&apos;s parent is NIL, then set &quot;root&quot; as &quot;x&quot;</div><div class="line">   else if y = left[p[y]]                    </div><div class="line">           then left[p[y]] ← x                 // Case 2: if &quot;y&quot; is the left child of &quot;y&quot;&apos;s parent, then set &quot;x&quot; as the left child of &quot;y&quot;&apos;s parent</div><div class="line">           else right[p[y]] ← x                // Case 3: if &quot;y&quot; is the right child of &quot;y&quot;&apos;s parent, then set &quot;x&quot; as the right child of &quot;y&quot;&apos;s parent</div><div class="line">if y ≠ z                                    </div><div class="line">   then key[z] ← key[y]                        // if &quot;y&quot; not equal to &quot;z&quot;, then only copy &quot;y&quot;&apos;s satellite data to &quot;z&quot;, don&apos;t copy &quot;y&quot;&apos;s color!</div><div class="line">        copy y&apos;s satellite data into z         </div><div class="line">		</div><div class="line">if color[y] = BLACK                            </div><div class="line">   then RB-DELETE-FIXUP(T, x)                  // if &quot;y&quot; is BLACK, then call RE-DELETE-FIXUP function</div><div class="line">return y</div></pre></td></tr></table></figure></p>
+<img src="/archive/2016/11/29/Red-Black-Tree-Deletion/rbt_deletion_case_4.png" alt="Figure 4 Red-Black Tree Deletion" title="Figure 4 Red-Black Tree Deletion"> 
+<p>So according to the above image <em>Figure 4</em>, let’s say the deleting node is <strong>z</strong>, then </p>
+<p>If <strong>z</strong>‘s children is less than 2, then just need to point <strong>y</strong> to <strong>z</strong>;<br>If <strong>y</strong> is <strong>RED</strong>, then just delete it, because it won’t break <strong>Red-Black Tree</strong>‘s <a href="#Properties">properties</a>;<br>If <strong>y</strong> is <strong>BLACK</strong>, then we have to call the $fixup$ function, also just delete it, because it won’t break <strong>Red-Black Tree</strong>‘s <a href="#Properties">properties</a>; </p>
+<p>If <strong>z</strong> has two child nodes, then find <strong>z</strong>‘s successor <strong>y</strong>, use <strong>y</strong> to replace <strong>z</strong>, recolor <strong>y</strong> as <strong>z</strong>‘s color, so it won’t break <strong>Red-Black Tree</strong>‘s <a href="#Properties">properties</a>;</p>
+<p>In order to facilitate analysis, we assume that </p>
+<p>删除操作同二叉树的删除操作也是类似，也是同样分为：少于两个子结点、有两个子结点的情况，红色标注不同；<br>1.z的子节点数少于两个：（令y指向z的位置）如果结点y颜色为红色直接删除，因为不会破坏红黑的性质；若为y黑色，调用颜色修复函数,并令其子树x代替z的位置，并把颜色也改变成z的颜色。<br>2.z的子节点数有两个：找到z的后继y,用y代替z的位置，并把y的颜色换成z的颜色，这样不会破坏红黑的性质。但是如果y在之前的位置是黑色，现在由于转移走了，y的右子树x代替了y的位置，此时破坏了这个支树的红黑性质，少了一个黑色结点，需要调用颜色修复函数；</p>
+<p>当删除一个黑色节点D时，把D的黑色“下推”至其子节点C，也就是说C除了本身的颜色外多了一重额外的黑色，然后不断把这重额外的黑色沿树上移，直到碰到一个红色节点，把其变为黑色以保证路径上黑色节点数目不变，或者移到树的根部，这样所有路径上的黑色节点数目都减一，保持相等。上移过程中可能需要旋转和修改一些节点的颜色，以保证路径上黑色节点数目不变。</p>
+<hr>
+<p>The C++ code for <strong>Red-Black Tree RB_Transplant</strong> is below:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">RB_Transplant</span><span class="params">(Node **T,Node * u,Node * v)</span> </span>&#123;  <span class="comment">//It's like copy u to v</span></div><div class="line">  <span class="keyword">if</span> (u-&gt;p == T_NIL)  </div><div class="line">    *T = v;  </div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (u == u-&gt;p-&gt;left)  </div><div class="line">    u-&gt;p-&gt;left = v;  </div><div class="line">  <span class="keyword">else</span>  </div><div class="line">    u-&gt;p-&gt;right = v;  </div><div class="line">  v-&gt;p = u-&gt;p;            <span class="comment">//Mandatory step even v's value is T_NIL, it's for the color fix up needed</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The C++ code for <strong>Red-Black Tree RB_Delete</strong> is below:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function">Node * <span class="title">RB_Delete</span><span class="params">(Node *T ,Node *z)</span> </span>&#123;  <span class="comment">//Same as BST Deletion, the only difference is check y's color</span></div><div class="line">  Node * x = <span class="literal">NULL</span>;  </div><div class="line">  Node * y = z;                             <span class="comment">//assign z to y</span></div><div class="line">  <span class="keyword">enum</span> colors y_original_color = y-&gt;color;  <span class="comment">//save z's original color before deleting</span></div><div class="line">  <span class="keyword">if</span> (z-&gt;left == T_NIL) &#123;                   <span class="comment">//if z doesn't have left child</span></div><div class="line">    x = z-&gt;right;  </div><div class="line">    RB_Transplant(&amp;T,z,z-&gt;right);  </div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (z-&gt;right == T_NIL) &#123;           <span class="comment">//if z doesn't have right child</span></div><div class="line">    x = z-&gt;left;  </div><div class="line">    RB_Transplant(&amp;T,z,z-&gt;left);  </div><div class="line">  &#125; <span class="keyword">else</span> &#123;                                  <span class="comment">//if z has two child nodes</span></div><div class="line">    y = Tree_Minimum(z-&gt;right);             <span class="comment">//find z's successor   </span></div><div class="line">    y_original_color = y-&gt;color;            <span class="comment">//save y's original color</span></div><div class="line">    x = y-&gt;right;  </div><div class="line">    <span class="keyword">if</span> (y-&gt;p == z) &#123;                        <span class="comment">//if y's parent is z</span></div><div class="line">      x-&gt;p = y;  </div><div class="line">    &#125; <span class="keyword">else</span> &#123;  </div><div class="line">        RB_Transplant(&amp;T,y,y-&gt;right);       <span class="comment">//if y's parent is not z, replace y with y's right child</span></div><div class="line">        y-&gt;right = z-&gt;right;  </div><div class="line">        y-&gt;right-&gt;p = y;  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    RB_Transplant(&amp;T,z,y);                  <span class="comment">//replace z with y, no matter if y's value is T_NIL</span></div><div class="line">    y-&gt;left = z-&gt;left;  </div><div class="line">    y-&gt;left-&gt;p = y;  </div><div class="line">    y-&gt;color = z-&gt;color;                    <span class="comment">//change y's color to z's color</span></div><div class="line">  &#125;  </div><div class="line">  </div><div class="line">  <span class="keyword">if</span> (y_original_color == black)            <span class="comment">//if y's color is BLACK, then fix up the tree</span></div><div class="line">    RB_Delete_Fixup(T,x); </div><div class="line">	</div><div class="line">  <span class="keyword">return</span> T;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Here let’s take about the function <strong>RB_Delete_Fixup(T,x)</strong>. Please notice that the input parameter is <strong>x</strong>, it becauses that either <strong>y</strong> is deleted or transplanted, <strong>x</strong> replaces <strong>y</strong>‘s position.<br>If <strong>x</strong> is <strong>RED</strong>, then recolor <strong>x</strong> as <strong>BLACK</strong> will fix up the tree.<br>If <strong>x</strong> is <strong>BLACK</strong>, then:</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/" data-id="ciw3zw0ha000eeswm5lhflike" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/29/Red-Black-Tree-Deletion/" data-id="ciy3d4xdp0009mclshjf9f7qh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -185,7 +357,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 bacon<br>
+      &copy; 2017 bacon<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -209,6 +381,23 @@
 
 <script src="/js/script.js"></script>
 
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

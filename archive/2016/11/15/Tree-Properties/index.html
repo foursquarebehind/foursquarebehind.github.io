@@ -13,7 +13,7 @@
 <meta property="og:description" content="Depth: The number of lines you pass through when you travel from the root until you reach a particular node is the depth of that node in the tree, or is the number of edges from the node to the tree’">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/tree_properties_1.jpg">
 <meta property="og:image" content="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/tree_height_depth.png">
-<meta property="og:updated_time" content="2016-11-16T21:45:13.031Z">
+<meta property="og:updated_time" content="2016-11-30T21:21:29.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tree Properties">
 <meta name="twitter:description" content="Depth: The number of lines you pass through when you travel from the root until you reach a particular node is the depth of that node in the tree, or is the number of edges from the node to the tree’">
@@ -109,6 +109,55 @@
 </tr>
 </tbody>
 </table>
+<hr>
+<p>In Binary Tree, <strong>Inorder Successor</strong> of a node is the next node in Inorder traversal of the Binary Tree. <strong>Inorder Successor</strong> is NULL for the last node in Inoorder traversal.<br>In Binary Search Tree, <strong>Inorder Successor</strong> of an input node can also be defined as the node with the smallest key greater than the key of input node.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>Q</strong></th>
+<th style="text-align:left"><strong>How can you find successors and predecessors in a binary search tree in order?</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Case 1</strong></td>
+<td style="text-align:left"><strong>The node has a right subtree</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left"><em>If the given node has a right subtree then by the BST property the next larger key must be in the right subtree.</em></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left"><em>Since all keys in a right subtree are larger than the key of the given node, the successor must be the smallest of all those keys in the right subtree.</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Case 2</strong></td>
+<td style="text-align:left"><strong>The node does not have a right subtree</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left"><em>In this case we will have to look up the tree since that’s the only place we might find the next larger key.</em></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left"><em>There is no point looking at the left subtree as all keys in the left subtree are guaranteed to be smaller than the key in the given tree.</em></td>
+</tr>
+<tr>
+<td style="text-align:left">&nbsp;</td>
+<td style="text-align:left"><em>When we look up from the given node, there can be two cases:</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Case 2.1</strong></td>
+<td style="text-align:left"><em>The current node is the left child of its parent. In this case the parent is the successor node. This is because the parent always comes next in inorder traversal if you are done with left subtree (rooted at the current node).</em></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Case 2.2</strong></td>
+<td style="text-align:left"><em>The current node is the right child of the parent. This is an interesting case. In this case, as you keep going up the ancestor chain you encounter smaller values if you are going up but larger values if you are going right. The successor node will be the first node up the ancestor chain that you encounter on the right chain.</em></td>
+</tr>
+</tbody>
+</table>
 <h5 id="References"><a href="#References" class="headerlink" title="References"></a>References</h5><ul>
 <li><a href="http://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-depth-and-height" target="_blank" rel="external">http://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-depth-and-height</a></li>
 <li><a href="https://www.topcoder.com/community/data-science/data-science-tutorials/an-introduction-to-binary-search-and-red-black-trees/" target="_blank" rel="external">https://www.topcoder.com/community/data-science/data-science-tutorials/an-introduction-to-binary-search-and-red-black-trees/</a></li>
@@ -117,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="ciw3zw0gz0009eswmelu8vc1w" class="article-share-link">Share</a>
+      <a data-url="https://foursquarebehind.github.io/archive/2016/11/15/Tree-Properties/" data-id="ciy3d4xf00011mclsre4s1lmf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
@@ -222,7 +271,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 bacon<br>
+      &copy; 2017 bacon<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
